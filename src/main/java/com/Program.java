@@ -48,29 +48,33 @@ public class Program {
             System.out.println(match);
         }
 
-        int totalAge = 0;
+        double totalAge = 0;
         double averageAge;
         for (Person person : people) {
             totalAge += person.getAge();
         }
-        averageAge = (double) totalAge/people.size();
+        averageAge =totalAge/people.size();
         System.out.println(averageAge);
 
         Person oldest = people.get(0);
+        int oldAge;
         for (Person person : people) {
             if(oldest.getAge() < person.getAge()){
                 oldest = person;
             }
         }
-        System.out.println(oldest);
+        oldAge = oldest.getAge();
+        System.out.println(oldAge);
 
         Person youngest = people.get(0);
+        int youngAge ;
         for (Person person : people) {
             if(youngest.getAge()> person.getAge()){
                 youngest = person;
             }
         }
-        System.out.println(youngest);
+        youngAge = youngest.getAge();
+        System.out.println(youngAge);
 
 
 
