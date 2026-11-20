@@ -45,27 +45,19 @@ public class Program {
             }
         }
         for (Person match : nameMatch) {
-            System.out.println(match);
+            System.out.print("Person found with first name: " + match.getFirstName() + " and Last name: " + match.getLastName());
+            System.out.println();
         }
 
-        double totalAge = 0;
-        double averageAge;
-        for (Person person : people) {
-            totalAge += person.getAge();
-        }
-        averageAge =totalAge/people.size();
-        System.out.println(averageAge);
+        System.out.print("The average age is: " + getAverage(people));
+        System.out.println();
+        System.out.print("The youngest age is: " + getYoung(people));
+        System.out.println();
+        System.out.print("The oldest age isn: " + getOld(people));
+        System.out.println();
+    }
 
-        Person oldest = people.get(0);
-        int oldAge;
-        for (Person person : people) {
-            if(oldest.getAge() < person.getAge()){
-                oldest = person;
-            }
-        }
-        oldAge = oldest.getAge();
-        System.out.println(oldAge);
-
+    public static int getYoung(List<Person> people){
         Person youngest = people.get(0);
         int youngAge ;
         for (Person person : people) {
@@ -74,18 +66,29 @@ public class Program {
             }
         }
         youngAge = youngest.getAge();
-        System.out.println(youngAge);
+        return youngAge;
 
+    }
+    public static int getOld(List<Person> people){
+        Person oldest = people.get(0);
+        int oldAge;
+        for (Person person : people) {
+            if(oldest.getAge() < person.getAge()){
+                oldest = person;
+            }
+        }
+        oldAge = oldest.getAge();
+        return oldAge;
+    }
 
-
-
-
-
-
-
-
-
-
+    public static double getAverage(List<Person> people){
+        double totalAge = 0;
+        double averageAge;
+        for (Person person : people) {
+            totalAge += person.getAge();
+        }
+        averageAge =totalAge/people.size();
+        return averageAge;
 
     }
 }
