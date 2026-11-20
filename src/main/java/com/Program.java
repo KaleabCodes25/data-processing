@@ -2,6 +2,7 @@ package com;
 
 import com.pluralsight.loops.Person;
 
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -12,7 +13,7 @@ public class Program {
 
 
         List<Person> people = new ArrayList<>();
-        Person firstP = new Person("James", "Anderson",280);
+        Person firstP = new Person("James", "Anderson",28);
         people.add(firstP);
         Person secondp = new Person("Sophia","Martinez",34);
         people.add(secondp);
@@ -34,7 +35,7 @@ public class Program {
         people.add(tenthP);
 
         System.out.print("Enter a name to search(first or last): ");
-        String name = scanner.nextLine();
+        String name = scanner.nextLine().trim();
 
         List<Person> nameMatch = new ArrayList<>();
 
@@ -46,6 +47,36 @@ public class Program {
         for (Person match : nameMatch) {
             System.out.println(match);
         }
+
+        int totalAge = 0;
+        double averageAge;
+        for (Person person : people) {
+            totalAge += person.getAge();
+        }
+        averageAge = (double) totalAge/people.size();
+        System.out.println(averageAge);
+
+        Person oldest = people.get(0);
+        for (Person person : people) {
+            if(oldest.getAge() > person.getAge()){
+                oldest = person;
+            }
+        }
+        System.out.println(oldest);
+
+        Person youngest = people.get(0);
+        for (Person person : people) {
+            if(youngest.getAge()< person.getAge()){
+                youngest = person;
+            }
+        }
+        System.out.println(youngest);
+
+
+
+
+
+
 
 
 
