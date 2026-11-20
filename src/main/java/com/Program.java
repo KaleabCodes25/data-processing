@@ -58,7 +58,7 @@ public class Program {
 
         Person oldest = people.get(0);
         for (Person person : people) {
-            if(oldest.getAge() > person.getAge()){
+            if(oldest.getAge() < person.getAge()){
                 oldest = person;
             }
         }
@@ -66,7 +66,7 @@ public class Program {
 
         Person youngest = people.get(0);
         for (Person person : people) {
-            if(youngest.getAge()< person.getAge()){
+            if(youngest.getAge()> person.getAge()){
                 youngest = person;
             }
         }
