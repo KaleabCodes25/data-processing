@@ -2,12 +2,15 @@ package com;
 
 import com.pluralsight.loops.Person;
 
-import javax.imageio.plugins.jpeg.JPEGImageReadParam;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+
         List<Person> people = new ArrayList<>();
         Person firstP = new Person("James", "Anderson",280);
         people.add(firstP);
@@ -29,6 +32,22 @@ public class Program {
         people.add(nineP);
         Person tenthP = new Person("Ava","Robinson",25);
         people.add(tenthP);
+
+        System.out.print("Enter a name to search(first or last): ");
+        String name = scanner.nextLine();
+
+        List<Person> nameMatch = new ArrayList<>();
+
+        for (Person person : people) {
+            if(name.equalsIgnoreCase(person.getFirstName()) || name.equalsIgnoreCase(person.getLastName())){
+                nameMatch.add(person);
+            }
+        }
+        for (Person match : nameMatch) {
+            System.out.println(match);
+        }
+
+
 
 
 
